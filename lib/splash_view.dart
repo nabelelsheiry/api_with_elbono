@@ -37,7 +37,7 @@ class _SplashViewState extends State<SplashView> {
           Spacer(),
           Hero(tag: "logo",child: Image.asset(AppAssets.branding)),
           Spacer(),
-          Image.asset(AppAssets.burger),
+          Image.asset(AppAssets.burger1),
         ],
       ),
 

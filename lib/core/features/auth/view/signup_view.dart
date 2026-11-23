@@ -1,6 +1,7 @@
 import 'package:api_with_elbono/core/constants/app_assets.dart';
 import 'package:api_with_elbono/core/constants/app_colors.dart';
 import 'package:api_with_elbono/core/constants/app_text_styles.dart';
+import 'package:api_with_elbono/core/features/auth/widgets/button_widget.dart';
 import 'package:api_with_elbono/core/features/auth/widgets/text_form_field_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -87,21 +88,12 @@ class _SignupViewState extends State<SignupView> {
                     },
                   ),
                   Gap(30),
-                  GestureDetector(
-                    onTap: (){
-                      if(formKey.currentState!.validate()){
-                        print("success Sign Up");
-                      }
-                    },
-                    child: Container(
-                      padding: EdgeInsets.symmetric(vertical: 10),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      child: Center(child: Text("Sign Up",style: AppTextStyles.green24w700,)),
-                    ),
-                  )
+                  ButtonWidget(text: "Sign Up",onTap: (){
+                    if(formKey.currentState!.validate()){
+                      print("success Sign Up");
+                    }
+                  },)
+
                 ],
               ),
             ),

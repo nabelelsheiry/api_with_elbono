@@ -17,6 +17,7 @@ abstract final class AppColors {
   static const Color darkSurface = Color(0xFF3E3232); // selected payment card, topping/side labels
   static const Color divider = Color(0xFFAFBDB3);
   static const Color red = Colors.red;
+  static const Color grey = Colors.grey;
 
   // Text
   static const Color textPrimary = Color(0xFF000000);

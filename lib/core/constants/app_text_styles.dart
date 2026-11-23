@@ -96,6 +96,11 @@ abstract final class AppTextStyles {
     fontWeight: FontWeight.w400,
     color: AppColors.textSecondary,
   );
+  static const TextStyle green14w500 = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+    color: AppColors.primary,
+  );
 
   // Light grey (textHint)
   static const TextStyle lightGrey11w400 = TextStyle(

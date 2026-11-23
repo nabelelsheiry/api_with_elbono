@@ -6,8 +6,9 @@ class TextFormFieldWidget extends StatefulWidget {
   final String hintText;
   final TextEditingController controller;
   final bool isPassword ;
+  final Widget? prefixIcon;
   final String? Function(String?)? validator;
-  const TextFormFieldWidget({super.key, required this.hintText, required this.controller, this.isPassword=false, this.validator});
+  const TextFormFieldWidget({super.key, required this.hintText, required this.controller, this.isPassword=false, this.validator, this.prefixIcon});
 
   @override
   State<TextFormFieldWidget> createState() => _TextFormFieldWidgetState();
@@ -28,13 +29,13 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-
       controller: widget.controller,
            cursorHeight: 20,
            cursorColor: AppColors.primary,
            obscureText: _obscureText,
            validator: widget.validator,
            decoration: InputDecoration(
+             prefixIcon: widget.prefixIcon,
              suffixIcon:widget.isPassword ?  GestureDetector(
                  onTap: _togglePassword,
                      child: _obscureText? Icon(CupertinoIcons.eye_fill):Icon(CupertinoIcons.eye_slash_fill),
