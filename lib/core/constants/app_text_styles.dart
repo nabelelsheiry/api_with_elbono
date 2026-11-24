@@ -28,9 +28,9 @@ abstract final class AppTextStyles {
     color: AppColors.white,
   );
 
-  static const TextStyle white44w900 = TextStyle(
-    fontSize: 44,
-    fontWeight: FontWeight.w900,
+  static const TextStyle white18w600 = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w600,
     color: AppColors.white,
   );
 

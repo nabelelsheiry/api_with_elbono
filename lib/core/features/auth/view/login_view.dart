@@ -3,6 +3,7 @@ import 'package:api_with_elbono/core/constants/app_colors.dart';
 import 'package:api_with_elbono/core/constants/app_text_styles.dart';
 import 'package:api_with_elbono/core/features/auth/widgets/button_widget.dart';
 import 'package:api_with_elbono/core/features/auth/widgets/text_form_field_widget.dart';
+import 'package:api_with_elbono/core/features/home/views/root_view.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -73,6 +74,7 @@ class _LoginViewState extends State<LoginView> {
                   ButtonWidget(text: "Login",onTap: (){
                     if(formKey.currentState!.validate()){
                       print("success Login");
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => RootView(),));
                     }
                   },)
                 ],
