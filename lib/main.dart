@@ -1,5 +1,6 @@
 import 'package:api_with_elbono/core/features/auth/view/login_view.dart';
 import 'package:api_with_elbono/core/features/auth/view/signup_view.dart';
+import 'package:api_with_elbono/core/features/checkOut/views/checkout_view.dart';
 import 'package:api_with_elbono/core/features/home/views/root_view.dart';
 import 'package:api_with_elbono/core/features/product/views/product_view.dart';
 import 'package:api_with_elbono/splash_view.dart';

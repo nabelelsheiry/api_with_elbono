@@ -28,6 +28,12 @@ abstract final class AppTextStyles {
     color: AppColors.white,
   );
 
+  static const TextStyle white16w600 = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w600,
+    color: AppColors.white,
+  );
+
   static const TextStyle white18w600 = TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.w600,
