@@ -1,7 +1,7 @@
 import 'package:api_with_elbono/core/constants/app_assets.dart';
 import 'package:api_with_elbono/core/constants/app_colors.dart';
 import 'package:api_with_elbono/core/constants/app_text_styles.dart';
-import 'package:api_with_elbono/core/features/home/views/home_view.dart';
+import 'package:api_with_elbono/core/features/cart/views/cart_view.dart';
 import 'package:api_with_elbono/core/features/home/views/root_view.dart';
 import 'package:api_with_elbono/core/features/product/model/additional_model.dart';
 import 'package:api_with_elbono/core/features/product/widgets/additional_category_widget.dart';
@@ -58,10 +58,54 @@ class _ProductViewState extends State<ProductView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomSheet: SizedBox(
+        height: 110,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 16),
+          child: Row(
+            children: [
+              const Gap(10),
+              Column  (
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text("Total",style: AppTextStyles.black16w600.copyWith(fontSize: 20),),
+                  Gap(10),
+                  Text("\$18.19",style: AppTextStyles.black24w600,),
+                ],
+              ),
+              Spacer(),
+              CustomButton(
+                text: "Add To Cart",
+                horizontal: 30,
+                vertical: 20,
+                right: 10,
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const CartView(),
+                    ),
+                  );
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
       appBar: AppBar(
-        leading: IconButton(onPressed: (){
-          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => RootView(),));
-        }, icon: Icon(Icons.arrow_back,color: AppColors.primary,)),
+        leading: IconButton(
+          onPressed: () {
+            if (Navigator.canPop(context)) {
+              Navigator.pop(context);
+            } else {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => const RootView()),
+              );
+            }
+          },
+          icon: const Icon(Icons.arrow_back, color: AppColors.primary),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.only(left: 16),
@@ -126,20 +170,6 @@ class _ProductViewState extends State<ProductView> {
                   }),
             ),
             Gap(40),
-            Row(
-              children: [
-                Column  (
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text("Total",style: AppTextStyles.black16w600.copyWith(fontSize: 20),),
-                    Gap(10),
-                    Text("\$18.19",style: AppTextStyles.black24w600,),
-                  ],
-                ),
-                Spacer(),
-                CustomButton(text: "Add To Cart", horizontal: 30, vertical: 16, right: 16)
-              ],
-            ),
 
 
           ],

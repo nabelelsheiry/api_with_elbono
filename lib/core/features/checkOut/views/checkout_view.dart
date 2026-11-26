@@ -124,7 +124,11 @@ class _CheckoutViewState extends State<CheckoutView> {
                       ],
                     ),
                     Spacer(),
-                    GestureDetector(
+                    CustomButton(
+                      text: "Pay Now",
+                      horizontal: 50,
+                      vertical: 16,
+                      right: 16,
                       onTap: () {
                         Navigator.push(
                           context,
@@ -133,12 +137,6 @@ class _CheckoutViewState extends State<CheckoutView> {
                           ),
                         );
                       },
-                      child: const CustomButton(
-                        text: "Pay Now",
-                        horizontal: 50,
-                        vertical: 16,
-                        right: 16,
-                      ),
                     ),
                   ],
                 ),

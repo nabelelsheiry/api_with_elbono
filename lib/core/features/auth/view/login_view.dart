@@ -1,6 +1,7 @@
 import 'package:api_with_elbono/core/constants/app_assets.dart';
 import 'package:api_with_elbono/core/constants/app_colors.dart';
 import 'package:api_with_elbono/core/constants/app_text_styles.dart';
+import 'package:api_with_elbono/core/features/auth/view/signup_view.dart';
 import 'package:api_with_elbono/core/features/auth/widgets/button_widget.dart';
 import 'package:api_with_elbono/core/features/auth/widgets/text_form_field_widget.dart';
 import 'package:api_with_elbono/core/features/home/views/root_view.dart';
@@ -76,7 +77,34 @@ class _LoginViewState extends State<LoginView> {
                       print("success Login");
                       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => RootView(),));
                     }
-                  },)
+                  },),
+                  const Gap(20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text(
+                        "Don't have an account? ",
+                        style: AppTextStyles.white13w500,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const SignupView(),
+                            ),
+                          );
+                        },
+                        child: Text(
+                          "Sign Up",
+                          style: AppTextStyles.white14w500.copyWith(
+                            fontWeight: FontWeight.bold,
+                            decoration: TextDecoration.underline,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),

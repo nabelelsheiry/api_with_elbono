@@ -2,6 +2,7 @@ import 'package:api_with_elbono/core/constants/app_assets.dart';
 import 'package:api_with_elbono/core/constants/app_colors.dart';
 import 'package:api_with_elbono/core/constants/app_text_styles.dart';
 import 'package:api_with_elbono/core/features/auth/widgets/text_form_field_widget.dart';
+import 'package:api_with_elbono/core/features/home/views/root_view.dart';
 import 'package:api_with_elbono/core/features/home/model/product_model.dart';
 import 'package:api_with_elbono/core/features/home/widgets/card_widget.dart';
 import 'package:flutter/cupertino.dart';
@@ -102,7 +103,24 @@ class _HomeViewState extends State<HomeView> {
                 children: [
                   Hero(tag: "logo",child: Image.asset(AppAssets.branding, color: AppColors.primary,width: 190,),),
                   Spacer(),
-                  CircleAvatar(radius: 30,backgroundColor: AppColors.surface,child: Icon(CupertinoIcons.person_alt,size: 30,color: AppColors.primary,),),
+                  GestureDetector(
+                    onTap: () {
+                      RootView.changeTab(context, 3);
+                    },
+                    child: CircleAvatar(
+                      backgroundColor: AppColors.primary,
+                      radius: 32,
+                      child: CircleAvatar(
+                        radius: 30,
+                        backgroundColor: AppColors.surface,
+                        child: Icon(
+                          CupertinoIcons.person_alt,
+                          size: 30,
+                          color: AppColors.primary,
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),

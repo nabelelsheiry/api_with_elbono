@@ -1,8 +1,10 @@
 import 'package:api_with_elbono/core/constants/app_assets.dart';
 import 'package:api_with_elbono/core/constants/app_colors.dart';
 import 'package:api_with_elbono/core/constants/app_text_styles.dart';
+import 'package:api_with_elbono/core/features/auth/view/login_view.dart';
 import 'package:api_with_elbono/core/features/auth/widgets/button_widget.dart';
 import 'package:api_with_elbono/core/features/auth/widgets/text_form_field_widget.dart';
+import 'package:api_with_elbono/core/features/home/views/root_view.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -91,8 +93,40 @@ class _SignupViewState extends State<SignupView> {
                   ButtonWidget(text: "Sign Up",onTap: (){
                     if(formKey.currentState!.validate()){
                       print("success Sign Up");
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const RootView(),));
                     }
-                  },)
+                  },),
+                  const Gap(20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text(
+                        "Already have an account? ",
+                        style: AppTextStyles.white13w500,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          if (Navigator.canPop(context)) {
+                            Navigator.pop(context);
+                          } else {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const LoginView(),
+                              ),
+                            );
+                          }
+                        },
+                        child: Text(
+                          "Login",
+                          style: AppTextStyles.white14w500.copyWith(
+                            fontWeight: FontWeight.bold,
+                            decoration: TextDecoration.underline,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
 
                 ],
               ),

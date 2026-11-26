@@ -18,7 +18,7 @@ abstract final class AppAssets {
   static const String onion = "${_rootPath}Onion.png";
   static const String onions = "${_rootPath}Onions.png";
   static const String pickles = "${_rootPath}Pickles.png";
-  static const String profile = "${_rootPath}Profile.png";
+  static const String profile = "${_rootPath}profile.jpg";
   static const String salad = "${_rootPath}Salad.png";
   static const String slises = "${_rootPath}slises.png";
   static const String tomato = "${_rootPath}Tomato.png";

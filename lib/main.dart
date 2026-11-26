@@ -1,24 +1,28 @@
-import 'package:api_with_elbono/core/features/auth/view/login_view.dart';
-import 'package:api_with_elbono/core/features/auth/view/signup_view.dart';
-import 'package:api_with_elbono/core/features/checkOut/views/checkout_view.dart';
+import 'package:api_with_elbono/core/features/home/views/home_view.dart';
 import 'package:api_with_elbono/core/features/home/views/root_view.dart';
 import 'package:api_with_elbono/core/features/product/views/product_view.dart';
 import 'package:api_with_elbono/splash_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+   await SystemChrome.setPreferredOrientations(
+    [
+      DeviceOrientation.portraitUp
+    ]
+  );
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-     home: RootView(),
+      home: ProductView(),
     );
   }
 }

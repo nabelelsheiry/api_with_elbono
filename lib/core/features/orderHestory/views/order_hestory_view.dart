@@ -1,4 +1,5 @@
 import 'package:api_with_elbono/core/constants/app_assets.dart';
+import 'package:api_with_elbono/core/features/checkOut/views/checkout_view.dart';
 import 'package:api_with_elbono/core/features/orderHestory/model/order_hestory_model.dart';
 import 'package:api_with_elbono/core/features/orderHestory/widgets/order_hestory_widget.dart';
 import 'package:flutter/material.dart';
@@ -48,7 +49,14 @@ class _OrderHestoryViewState extends State<OrderHestoryView> {
               name: order.name,
               quantity: order.quantity,
               price: order.price,
-              onReOrder: () {},
+              onReOrder: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const CheckoutView(),
+                  ),
+                );
+              },
             );
           },
         ),

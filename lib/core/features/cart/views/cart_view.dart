@@ -1,8 +1,8 @@
 import 'package:api_with_elbono/core/constants/app_assets.dart';
-import 'package:api_with_elbono/core/constants/app_colors.dart';
 import 'package:api_with_elbono/core/constants/app_text_styles.dart';
 import 'package:api_with_elbono/core/features/cart/model/cart_model.dart';
 import 'package:api_with_elbono/core/features/cart/widgets/cart_widget.dart';
+import 'package:api_with_elbono/core/features/checkOut/views/checkout_view.dart';
 import 'package:api_with_elbono/shared/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -104,7 +104,20 @@ class _CartViewState extends State<CartView> {
                   ],
                 ),
                 Spacer(),
-                CustomButton(text: "Add To Cart", horizontal: 30, vertical: 16, right: 16)
+                CustomButton(
+                  text: "Checkout",
+                  horizontal: 30,
+                  vertical: 16,
+                  right: 16,
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const CheckoutView(),
+                      ),
+                    );
+                  },
+                ),
               ],
             ),
           ),
